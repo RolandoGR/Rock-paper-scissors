@@ -1,5 +1,7 @@
 let playerScore = 0
 let computerScore = 0
+let tieScore = 0
+let gamesPlayed = 0
 
 function playerPlay() {
     let playerSelection = prompt("Welcome. Please write 'rock' 'paper' or 'scissors' to play:").toLowerCase()
@@ -13,13 +15,14 @@ function computerPlay() {
     return computerSelection
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
     playerSelection = playerPlay()
     computerSelection = computerPlay()
-    console.log (playerSelection)
-    console.log (computerSelection)
+    console.log("Player chose: " , playerSelection, "Computer chose: " , computerSelection)
+    ++gamesPlayed
     if (playerSelection === computerSelection) {
-        return 
+        console.log ("It's a tie!")
+        return ++tieScore
     }
 
     if (
@@ -27,6 +30,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper") || 
         (playerSelection === "rock" && computerSelection === "scissors")  
         ) { 
+        console.log ("Player Wins")
         return ++playerScore    
      }
     if (
@@ -34,6 +38,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "rock" && computerSelection === "paper") || 
         (playerSelection === "scissors" && computerSelection === "rock")
         ) { 
+            console.log ("Computer Wins")
         return ++computerScore 
     }
 
@@ -41,5 +46,26 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+function game () {
+    for (gamesPlayed = 0; gamesPlayed <= 4;) {
+        playRound()
+    }
+    while (computerScore === playerScore) {
+        console.log ("SUDDEN DEATH!")
+        playRound()
+
+    }
+    console.log ("---Final scoreboard--- \n Player score: ", playerScore,
+    "Computer score: ", computerScore, 
+    "Tied games: ", tieScore, 
+    "Total games played: ", gamesPlayed)
+    return
+}
 
 game()
+
+
+
+
+
+
