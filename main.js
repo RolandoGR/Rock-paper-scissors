@@ -2,16 +2,21 @@ let playerScore = 0
 let computerScore = 0
 let tieScore = 0
 let gamesPlayed = 0
+let options = [ "paper" , "rock" , "scissors"]
+
 
 function playerPlay() {
     let playerSelection = prompt("Welcome. Please write 'rock' 'paper' or 'scissors' to play:").toLowerCase()
+    if (options.indexOf(playerSelection) === -1) {
+        console.log(options.indexOf(playerSelection))
+        playerPlay()
+    }
     return playerSelection
 }
 
 function computerPlay() {
-    let computerOptions = [ "paper" , "rock" , "scissors"]
-    let random = Math.floor((Math.random() * computerOptions.length));
-    let computerSelection = computerOptions[random];
+    let random = Math.floor((Math.random() * options.length));
+    let computerSelection = options[random];
     return computerSelection
 }
 
