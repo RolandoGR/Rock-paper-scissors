@@ -2,32 +2,33 @@ let playerScore = 0
 let computerScore = 0
 let tieScore = 0
 let gamesPlayed = 0
-let options = [ "paper" , "rock" , "scissors"]
+let options = [ "paper" , "rock" , "scissors"];
 
 
 function playerPlay() {
     let playerSelection = prompt("Welcome. Please write 'rock' 'paper' or 'scissors' to play:").toLowerCase()
     if (options.indexOf(playerSelection) === -1) {
         console.log(options.indexOf(playerSelection))
-        playerPlay()
+        --gamesPlayed 
+        playerPlay();
     }
-    return playerSelection
+    return playerSelection;
 }
 
 function computerPlay() {
     let random = Math.floor((Math.random() * options.length));
     let computerSelection = options[random];
-    return computerSelection
+    return computerSelection;
 }
 
 function playRound() {
     playerSelection = playerPlay()
     computerSelection = computerPlay()
     console.log("Player chose: " , playerSelection, "Computer chose: " , computerSelection)
-    ++gamesPlayed
+    ++gamesPlayed;
     if (playerSelection === computerSelection) {
-        console.log ("It's a tie!")
-        return ++tieScore
+        console.log ("It's a tie!");
+        return ++tieScore;
     }
 
     if (
@@ -35,16 +36,16 @@ function playRound() {
         (playerSelection === "scissors" && computerSelection === "paper") || 
         (playerSelection === "rock" && computerSelection === "scissors")  
         ) { 
-        console.log ("Player Wins")
-        return ++playerScore    
+        console.log ("Player Wins");
+        return ++playerScore;    
      }
     if (
         (playerSelection === "paper" && computerSelection === "scissors") || 
         (playerSelection === "rock" && computerSelection === "paper") || 
         (playerSelection === "scissors" && computerSelection === "rock")
         ) { 
-            console.log ("Computer Wins")
-        return ++computerScore 
+            console.log ("Computer Wins");
+        return ++computerScore;
     }
 
     return
@@ -56,8 +57,8 @@ function game () {
         playRound()
     }
     while (computerScore === playerScore) {
-        console.log ("SUDDEN DEATH!")
-        playRound()
+        console.log ("SUDDEN DEATH!");
+        playRound();
 
     }
     console.log ("---Final scoreboard--- \n Player score: ", playerScore,
@@ -67,7 +68,7 @@ function game () {
     return
 }
 
-game()
+game();
 
 
 
