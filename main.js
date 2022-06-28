@@ -6,7 +6,7 @@ let options = [ "paper" , "rock" , "scissors"];
 
 
 function playerPlay() {
-    let playerSelection = prompt("Welcome. Please write 'rock' 'paper' or 'scissors' to play:").toLowerCase()
+    let playerSelection = prompt("Welcome. Please write 'rock' 'paper' or 'scissors' to play:").toLowerCase();
     if (options.indexOf(playerSelection) === -1) {
         console.log(options.indexOf(playerSelection))
         --gamesPlayed 
