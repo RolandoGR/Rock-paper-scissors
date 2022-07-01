@@ -1,18 +1,18 @@
 let playerScore = 0
 let computerScore = 0
 let tieScore = 0
-let gamesPlayed = 0
-let options = [ "paper" , "rock" , "scissors"];
 
+const selectionButtons = document.querySelectorAll('.selection');
 
-function playerPlay() {
-    let playerSelection = prompt("Welcome. Please write 'rock' 'paper' or 'scissors' to play:").toLowerCase();
-    if (options.indexOf(playerSelection) === -1) {
-        console.log(options.indexOf(playerSelection))
-        --gamesPlayed 
-        playerPlay();
-    }
-    return playerSelection;
+selectionButtons.forEach((selectionButton) => {
+    selectionButton.addEventListener('click', e => {
+        const selectionName = selectionButton.id 
+        makeSelection(selectionName)
+    });
+});
+
+function makeSelection(s) {
+    console.log(s)
 }
 
 function computerPlay() {
@@ -22,10 +22,9 @@ function computerPlay() {
 }
 
 function playRound() {
-    playerSelection = playerPlay()
+    playerSelection = makeSelection()
     computerSelection = computerPlay()
     console.log("Player chose: " , playerSelection, "Computer chose: " , computerSelection)
-    ++gamesPlayed;
     if (playerSelection === computerSelection) {
         console.log ("It's a tie!");
         return ++tieScore;
@@ -53,18 +52,10 @@ function playRound() {
 }
 
 function game () {
-    for (gamesPlayed = 0; gamesPlayed <= 4;) {
-        playRound()
-    }
-    while (computerScore === playerScore) {
-        console.log ("SUDDEN DEATH!");
-        playRound();
-
-    }
+    playRound();
     console.log ("---Final scoreboard--- \n Player score: ", playerScore,
     "Computer score: ", computerScore, 
-    "Tied games: ", tieScore, 
-    "Total games played: ", gamesPlayed)
+    "Tied games: ", tieScore,)
     return
 }
 
