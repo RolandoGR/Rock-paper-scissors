@@ -7,14 +7,11 @@ const selectionButtons = document.querySelectorAll('.selection');
 
 selectionButtons.forEach((selectionButton) => {
     selectionButton.addEventListener('click', e => {
-        const selectionName = selectionButton.id 
-        makeSelection(selectionName)
+        const playerSelection = selectionButton.id
+        playRound(playerSelection)
     });
 });
 
-function makeSelection(selection) {
-    return selection
-}
 
 function computerPlay() {
     let random = Math.floor((Math.random() * options.length));
@@ -22,8 +19,7 @@ function computerPlay() {
     return computerSelection;
 }
 
-function playRound() {
-    playerSelection = makeSelection()
+function playRound(playerSelection) {
     computerSelection = computerPlay()
     console.log("Player chose: " , playerSelection, "Computer chose: " , computerSelection)
     if (playerSelection === computerSelection) {
@@ -60,7 +56,7 @@ function game () {
     return
 }
 
-game();
+
 
 
 
