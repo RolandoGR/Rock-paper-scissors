@@ -1,6 +1,7 @@
 let playerScore = 0
 let computerScore = 0
 let tieScore = 0
+let options = [ "paper" , "rock" , "scissors"];
 
 const selectionButtons = document.querySelectorAll('.selection');
 
@@ -11,8 +12,8 @@ selectionButtons.forEach((selectionButton) => {
     });
 });
 
-function makeSelection(s) {
-    console.log(s)
+function makeSelection(selection) {
+    return selection
 }
 
 function computerPlay() {
