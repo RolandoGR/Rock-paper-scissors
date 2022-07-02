@@ -50,7 +50,7 @@ function playRound(playerSelection) {
     }
 
     selectionDisplay.classList.add('selectionDisplay');
-    selectionDisplay.textContent = `Player chose: ${playerSelection} Computer chose: ${computerSelection}`;
+    selectionDisplay.textContent = `Player chose: ${playerSelection} Alien chose: ${computerSelection}`;
     result.classList.add('result');
     scoreboard.appendChild(result)
     scoreboard.appendChild(selectionDisplay);
