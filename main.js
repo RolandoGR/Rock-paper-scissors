@@ -5,6 +5,8 @@ const options = [ "paper" , "rock" , "scissors"];
 const displayWinner = document.querySelector('.displayWinner');
 const selectionDisplay = document.createElement('div');
 const result = document.createElement('div');
+const playerPoints = document.createElement('div');
+const computerPoints = document.createElement('div')
 
 
 const selectionButtons = document.querySelectorAll('.selection');
@@ -48,14 +50,15 @@ function playRound(playerSelection) {
             result.textContent = 'The alien wins this round!';
             ++computerScore;
     }
-
+    
+    // Scoreboard DOM manipulation
     selectionDisplay.classList.add('selectionDisplay');
     selectionDisplay.textContent = `Player chose: ${playerSelection} Alien chose: ${computerSelection}`;
     result.classList.add('result');
     displayWinner.appendChild(result)
     displayWinner.appendChild(selectionDisplay);
-
-
+    document.getElementById('playerScore').textContent= `Player score: ${playerScore}`;
+    document.getElementById('computerScore').textContent= `Alien score: ${computerScore}`;
     return
 
 }
