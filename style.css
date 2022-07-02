@@ -1,11 +1,9 @@
 h1 {
-    font-family: Helvetica, sans-serif;
     text-align: center;
     font-size: 3rem;
 }
 
 h2 {
-    font-family: Helvetica, sans-serif;
     text-align: center;
     font-size: 1.5rem;
 }
@@ -14,6 +12,7 @@ body {
     background: rgb(127,73,171);
     background: linear-gradient(90deg, rgba(127,73,171,1) 0%, rgba(127,73,171,1) 40%, rgba(105,103,187,1) 60%, rgba(105,103,187,1) 100%);
     color: white;
+    font-family:  Arial, Helvetica, sans-serif;
 }
 
 button {
@@ -50,11 +49,22 @@ button {
     margin: 5%;  
 }
 
-.scoreboard {
+.displayWinner {
     outline: solid black;
     background: rgba(0, 0, 0, 0.3)
 
 }
+
+.title {
+    display:flex;
+    justify-content: center;
+}
+
+.points{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .selectionDisplay, .result {
     text-align: center;

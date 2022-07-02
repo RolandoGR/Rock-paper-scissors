@@ -2,7 +2,7 @@ let playerScore = 0
 let computerScore = 0
 let tieScore = 0
 const options = [ "paper" , "rock" , "scissors"];
-const scoreboard = document.querySelector('.scoreboard');
+const displayWinner = document.querySelector('.displayWinner');
 const selectionDisplay = document.createElement('div');
 const result = document.createElement('div');
 
@@ -37,7 +37,7 @@ function playRound(playerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper") || 
         (playerSelection === "rock" && computerSelection === "scissors")  
         ) { 
-            result.textContent = "You win!";
+            result.textContent = "You win this round!";
             ++playerScore;    
      }
     if (
@@ -45,15 +45,15 @@ function playRound(playerSelection) {
         (playerSelection === "rock" && computerSelection === "paper") || 
         (playerSelection === "scissors" && computerSelection === "rock")
         ) { 
-            result.textContent = 'The alien wins!';
+            result.textContent = 'The alien wins this round!';
             ++computerScore;
     }
 
     selectionDisplay.classList.add('selectionDisplay');
     selectionDisplay.textContent = `Player chose: ${playerSelection} Alien chose: ${computerSelection}`;
     result.classList.add('result');
-    scoreboard.appendChild(result)
-    scoreboard.appendChild(selectionDisplay);
+    displayWinner.appendChild(result)
+    displayWinner.appendChild(selectionDisplay);
 
 
     return
@@ -62,7 +62,7 @@ function playRound(playerSelection) {
 
 function game () {
     playRound();
-    console.log ("---Final scoreboard--- \n Player score: ", playerScore,
+    console.log ("---SCOREBOARD--- \n Player score: ", playerScore,
     "Computer score: ", computerScore, 
     "Tied games: ", tieScore,)
     return
