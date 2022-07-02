@@ -1,10 +1,13 @@
 let playerScore = 0
 let computerScore = 0
 let tieScore = 0
-let options = [ "paper" , "rock" , "scissors"];
+const options = [ "paper" , "rock" , "scissors"];
+const scoreboard = document.querySelector('.scoreboard');
+const selectionDisplay = document.createElement('div');
+const result = document.createElement('div');
+
 
 const selectionButtons = document.querySelectorAll('.selection');
-
 selectionButtons.forEach((selectionButton) => {
     selectionButton.addEventListener('click', e => {
         const playerSelection = selectionButton.id
@@ -20,11 +23,13 @@ function computerPlay() {
 }
 
 function playRound(playerSelection) {
-    computerSelection = computerPlay()
-    console.log("Player chose: " , playerSelection, "Computer chose: " , computerSelection)
+    computerSelection = computerPlay();
+
+        
+
     if (playerSelection === computerSelection) {
-        console.log ("It's a tie!");
-        return ++tieScore;
+            result.textContent = "It's a tie!";
+            ++tieScore;
     }
 
     if (
@@ -32,17 +37,24 @@ function playRound(playerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper") || 
         (playerSelection === "rock" && computerSelection === "scissors")  
         ) { 
-        console.log ("Player Wins");
-        return ++playerScore;    
+            result.textContent = "You win!";
+            ++playerScore;    
      }
     if (
         (playerSelection === "paper" && computerSelection === "scissors") || 
         (playerSelection === "rock" && computerSelection === "paper") || 
         (playerSelection === "scissors" && computerSelection === "rock")
         ) { 
-            console.log ("Computer Wins");
-        return ++computerScore;
+            result.textContent = 'The alien wins!';
+            ++computerScore;
     }
+
+    selectionDisplay.classList.add('selectionDisplay');
+    selectionDisplay.textContent = `Player chose: ${playerSelection} Computer chose: ${computerSelection}`;
+    result.classList.add('result');
+    scoreboard.appendChild(result)
+    scoreboard.appendChild(selectionDisplay);
+
 
     return
 
@@ -55,6 +67,7 @@ function game () {
     "Tied games: ", tieScore,)
     return
 }
+
 
 
 
