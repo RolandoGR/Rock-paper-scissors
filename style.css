@@ -1,0 +1,62 @@
+h1 {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+body {
+    background: rgb(127,73,171);
+    background: linear-gradient(90deg, rgba(127,73,171,1) 0%, rgba(127,73,171,1) 40%, rgba(105,103,187,1) 60%, rgba(105,103,187,1) 100%);
+    color: white;
+}
+
+button {
+    border-radius: 8px;
+}
+
+.alien{
+    display: flex;
+    justify-content: center;
+
+}
+.alien img {
+    padding: 3%;
+    width: 100px; 
+    height: auto;
+    background: radial-gradient(#e66465, #9198e5);    border-radius: 30%;
+    border: solid black;
+    }    
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    font-size: 100px;
+    transition: 130ms;
+    margin: 5%;  
+}
+
+
+.selection:hover {
+    transform: scale(1.1);
+    margin: 5%;  
+}
+
+.scoreboard {
+    outline: solid black;
+    background: rgba(0, 0, 0, 0.3)
+
+}
+
+.selectionDisplay, .result {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
