@@ -24,11 +24,14 @@ function computerPlay() {
     return computerSelection;
 }
 
+function flipingAlien() {
+
+}
+
+
+
 function playRound(playerSelection) {
     computerSelection = computerPlay();
-
-        
-
     if (playerSelection === computerSelection) {
             result.textContent = "It's a tie!";
             ++tieScore;
@@ -62,15 +65,6 @@ function playRound(playerSelection) {
     return
 
 }
-
-function game () {
-    playRound();
-    console.log ("---SCOREBOARD--- \n Player score: ", playerScore,
-    "Computer score: ", computerScore, 
-    "Tied games: ", tieScore,)
-    return
-}
-
 
 
 
