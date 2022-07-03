@@ -50,18 +50,18 @@ function playRound(playerSelection) {
         (playerSelection === "rock" && computerSelection === "paper") || 
         (playerSelection === "scissors" && computerSelection === "rock")
         ) { 
-            result.textContent = 'The alien wins this round!';
+            result.textContent = 'Allie wins this round!';
             ++computerScore;
     }
     
     // Scoreboard DOM manipulation
     selectionDisplay.classList.add('selectionDisplay');
-    selectionDisplay.textContent = `Player chose: ${playerSelection} Alien chose: ${computerSelection}`;
+    selectionDisplay.textContent = `Player chose: ${playerSelection} Allie chose: ${computerSelection}`;
     result.classList.add('result');
     displayWinner.appendChild(result)
     displayWinner.appendChild(selectionDisplay);
     document.getElementById('playerScore').textContent= `Player score: ${playerScore}`;
-    document.getElementById('computerScore').textContent= `Alien score: ${computerScore}`;
+    document.getElementById('computerScore').textContent= `Allie score: ${computerScore}`;
     return
 
 }

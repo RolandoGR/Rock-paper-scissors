@@ -85,8 +85,11 @@ body {
 button {
     border-radius: 8px;
     border: solid;
-    width: 150px;
+    width: 120px;
     height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .main {
@@ -95,7 +98,6 @@ button {
 }
 
 .selection {
-    font-size: 100px;
     transition: 130ms;  
     margin: 20px;
 
@@ -103,17 +105,14 @@ button {
 
 #rock {
     background-image:url('./img/rock.png');
-    background-size:cover;
 }
 
 #paper {
     background-image:url('./img/paper.png');
-    background-size:cover;
 }
 
 #scissors {
     background-image:url('./img/scissors.png');
-    background-size: cover;
 }
 .selection:hover {
     transform: scale(1.1);
