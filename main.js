@@ -56,7 +56,7 @@ function playRound(playerSelection) {
     
     // Scoreboard DOM manipulation
     selectionDisplay.classList.add('selectionDisplay');
-    selectionDisplay.textContent = `Player chose: ${playerSelection} Allie chose: ${computerSelection}`;
+    selectionDisplay.textContent = `Player chose: ${playerSelection}  |||  Allie chose: ${computerSelection}`;
     result.classList.add('result');
     displayWinner.appendChild(result)
     displayWinner.appendChild(selectionDisplay);
