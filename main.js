@@ -2,6 +2,8 @@ let playerScore = 0
 let computerScore = 0
 let tieScore = 0
 const options = [ "paper" , "rock" , "scissors"];
+
+// DOM elements
 const displayWinner = document.querySelector('.displayWinner');
 const selectionDisplay = document.createElement('div');
 const result = document.createElement('div');
@@ -10,6 +12,7 @@ const computerPoints = document.createElement('div')
 const winner = document.querySelector('.winner');
 const winnerMsg = document.createElement('div')
 
+//Functions
 
 const selectionButtons = document.querySelectorAll('.selection');
 selectionButtons.forEach((selectionButton) => {
@@ -37,6 +40,11 @@ function displayWinnerMsg(playerScore, computerScore) {
         winner.appendChild(winnerMsg);
 }
 }
+
+function reset(){
+    location.reload();
+  }
+
 
 
 function playRound(playerSelection) {
