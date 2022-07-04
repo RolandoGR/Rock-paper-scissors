@@ -26,6 +26,8 @@ body {
 .spaceship img{
     width: 200px;
     height: auto;
+    border: solid black;
+    border-radius: 50%;
 }
 /* Alien */
 .alien{
@@ -43,7 +45,7 @@ body {
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
-    width: 300px;
+    width: 200px;
     height: 200px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
@@ -74,7 +76,7 @@ body {
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     background: radial-gradient(#ffab28, #9198e5);
-    padding-top: 20px;
+    padding-top: 30px;
     border-radius: 50%;
     color: black;
     border: solid black;
