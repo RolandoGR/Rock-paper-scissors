@@ -7,6 +7,8 @@ const selectionDisplay = document.createElement('div');
 const result = document.createElement('div');
 const playerPoints = document.createElement('div');
 const computerPoints = document.createElement('div')
+const winner = document.querySelector('.winner');
+const winnerMsg = document.createElement('div')
 
 
 const selectionButtons = document.querySelectorAll('.selection');
@@ -24,10 +26,17 @@ function computerPlay() {
     return computerSelection;
 }
 
-function flipingAlien() {
-
+function displayWinnerMsg(playerScore, computerScore) {
+    if (playerScore >= 5 || computerScore >= 5){    
+        if (playerScore >= 5) {
+            winnerMsg.textContent = `You win!`;
+        } else if (computerScore >= 5) {
+            winnerMsg.textContent = `Allie wins!`;
+        }
+        winnerMsg.classList.add('winnerMsg');
+        winner.appendChild(winnerMsg);
 }
-
+}
 
 
 function playRound(playerSelection) {
@@ -54,6 +63,7 @@ function playRound(playerSelection) {
             ++computerScore;
     }
     
+
     // Scoreboard DOM manipulation
     selectionDisplay.classList.add('selectionDisplay');
     selectionDisplay.textContent = `Player chose: ${playerSelection}  |||  Allie chose: ${computerSelection}`;
@@ -62,14 +72,8 @@ function playRound(playerSelection) {
     displayWinner.appendChild(selectionDisplay);
     document.getElementById('playerScore').textContent= `Player score: ${playerScore}`;
     document.getElementById('computerScore').textContent= `Allie score: ${computerScore}`;
-    return
-
-}
-
-
-
-
-
-
+    
+    displayWinnerMsg(playerScore, computerScore)
+    }
 
 

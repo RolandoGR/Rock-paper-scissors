@@ -19,6 +19,7 @@ body {
 .rivals {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
     padding: 0 10%;
 }
@@ -28,6 +29,10 @@ body {
     height: auto;
     border: solid black;
     border-radius: 50%;
+}
+
+.winner {
+    font-size: xx-large;
 }
 /* Alien */
 .alien{
@@ -93,6 +98,17 @@ body {
     transform: rotateY(180deg);
 }
 
+/* Pick one */
+
+.pick {
+    display: flex;
+    font-size: large;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+
 /* RPS buttons */
 button {
     border-radius: 8px;
@@ -105,6 +121,13 @@ button {
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selectionButtons {
+    
     display: flex;
     justify-content: center;
 }
